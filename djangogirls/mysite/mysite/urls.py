@@ -17,12 +17,21 @@ from django.contrib import admin
 
 # 呼叫寫好的App 程式
 # 先 import 剛剛寫的 view function：
-from trips.views import hello_world
+# 增加動態網址傳送 post_detail
+from trips.views import hello_world, home, post_detail
 
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    #測試導向 Hello World
     url(r'^hello/$', hello_world),
+    #導向後台管理
+    url(r'^admin/', include(admin.site.urls)),
+
+    # 將首頁（正規表達式 ^$）指向 home() 這個 view function
+    url(r'^$', home),
+
+
 
 ]
