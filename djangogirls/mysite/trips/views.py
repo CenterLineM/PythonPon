@@ -28,5 +28,5 @@ def home(request):
 
 # 建立單篇文章的view
 def post_detail(request, pk):
-	post = post.objects.get(pk=pk)
-	return request(request, 'post.html', {'post':post})
+	post = Post.objects.get(pk=pk)
+	return render(request, 'post.html', {'post': post})

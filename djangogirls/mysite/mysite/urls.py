@@ -32,6 +32,11 @@ urlpatterns = [
     # 將首頁（正規表達式 ^$）指向 home() 這個 view function
     url(r'^$', home),
 
+    #單頁頁面
+    url(r'^post/(?P<pk>\d+)/$', post_detail, name='post_detail'),
+
+
+
 
 
 ]
